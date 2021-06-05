@@ -1,0 +1,151 @@
+[{
+  "_id": {
+    "$oid": "60bab6034cff6f00dd60ebd3"
+  },
+  "art_id": 1,
+  "art_nom": "Led Zeppelin",
+  "art_typ": "G",
+  "art_genre": {
+    "id": "HME",
+    "libelle": "Heavy Metal"
+  },
+  "art_pays": {
+    "id": "ANG",
+    "libelle": "Angleterre"
+  }
+},{
+  "_id": {
+    "$oid": "60bab6034cff6f00dd60ebd4"
+  },
+  "art_id": 2,
+  "art_nom": "Iron Maiden",
+  "art_typ": "G",
+  "art_genre": {
+    "id": "HME",
+    "libelle": "Heavy Metal"
+  },
+  "art_pays": {
+    "id": "ANG",
+    "libelle": "Angleterre"
+  }
+},{
+  "_id": {
+    "$oid": "60bab6034cff6f00dd60ebd5"
+  },
+  "art_id": 3,
+  "art_nom": "Adele",
+  "art_typ": "S",
+  "art_genre": {
+    "id": "POP",
+    "libelle": "Pop Music"
+  },
+  "art_pays": {
+    "id": "ANG",
+    "libelle": "Angleterre"
+  }
+},{
+  "_id": {
+    "$oid": "60bab6034cff6f00dd60ebd6"
+  },
+  "art_id": 4,
+  "art_nom": "Muse",
+  "art_typ": "G",
+  "art_genre": {
+    "id": "ROC",
+    "libelle": "Rock"
+  },
+  "art_pays": {
+    "id": "ANG",
+    "libelle": "Angleterre"
+  }
+},{
+  "_id": {
+    "$oid": "60bab6034cff6f00dd60ebd7"
+  },
+  "art_id": 5,
+  "art_nom": "Telephone",
+  "art_typ": "G",
+  "art_genre": {
+    "id": "ROC",
+    "libelle": "Rock"
+  },
+  "art_pays": {
+    "id": "FRA",
+    "libelle": "France"
+  }
+},{
+  "_id": {
+    "$oid": "60bab6034cff6f00dd60ebd8"
+  },
+  "art_id": 6,
+  "art_nom": "Coldplay",
+  "art_typ": "G",
+  "art_genre": {
+    "id": "POP",
+    "libelle": "Pop Music"
+  },
+  "art_pays": {
+    "id": "ANG",
+    "libelle": "Angleterre"
+  }
+},{
+  "_id": {
+    "$oid": "60bab6034cff6f00dd60ebd9"
+  },
+  "art_id": 7,
+  "art_nom": "Simple Plan",
+  "art_typ": "G",
+  "art_genre": {
+    "id": "ROC",
+    "libelle": "Rock"
+  },
+  "art_pays": {
+    "id": "CAN",
+    "libelle": "Canada"
+  }
+},{
+  "_id": {
+    "$oid": "60bab6034cff6f00dd60ebda"
+  },
+  "art_id": 8,
+  "art_nom": "Davis, Miles",
+  "art_typ": "S",
+  "art_genre": {
+    "id": "JAZ",
+    "libelle": "Jazz"
+  },
+  "art_pays": {
+    "id": "USA",
+    "libelle": "Etats Unis"
+  }
+},{
+  "_id": {
+    "$oid": "60bab6034cff6f00dd60ebdb"
+  },
+  "art_id": 9,
+  "art_nom": "Mc Laughlin, John",
+  "art_typ": "S",
+  "art_genre": {
+    "id": "JAZ",
+    "libelle": "Jazz"
+  },
+  "art_pays": {
+    "id": "ANG",
+    "libelle": "Angleterre"
+  }
+},{
+  "_id": {
+    "$oid": "60bab6034cff6f00dd60ebdc"
+  },
+  "art_id": 10,
+  "art_nom": "Rolling Stones",
+  "art_typ": "G",
+  "art_genre": {
+    "id": "ROC",
+    "libelle": "Rock"
+  },
+  "art_pays": {
+    "id": "ANG",
+    "libelle": "Angleterre"
+  }
+}]

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    </head>
+
+    <body class="mx-auto" style="width: 75%">
+        <h1 class="text-center mt-5 mb-5">Liste des albums de notre bibliothèque !</h1>
+
+        <div class="row row-cols-1 row-cols-sm-3 g-4">
+        {% for album in albums %}
+                <div class="col album" style="width: 250px;">
+                    <div class="card h-100">
+                        <img src="https://via.placeholder.com/300" class="card-img-top album_img" alt="pochette de l'album '{{ album.alb_nom }}'">
+                        <div class="card-body">
+                            <h5 class="card-title album_price text-center">{{ album.alb_prix }} €</h5>
+                            <p class="card-text"><span class="album_name"><strong>{{ album.alb_nom }}</strong></span>, par <span class="album_artist_name"><em>{{ album.alb_artiste.art_nom }}</em></span></p>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <script>
+            function computeURL(album_name, artist_name) {
+                const url_base = "https://ws.audioscrobbler.com/2.0/?method=album.getinfo"
+                const api_key = "e361fc6f9c1bcc83136d13a0614e0ad4"
+                const format = "json"
+
+                return encodeURI(
+                    url_base
+                    + "&api_key=" + api_key
+                    + "&artist=" + artist_name
+                    + "&album=" + album_name
+                    + "&format=" + format)
+            }
+
+            function callAPI(imgTag, album_name, artist_name) {
+                const request = new XMLHttpRequest()
+                request.open('GET', computeURL(album_name, artist_name))
+                request.onload = function () {
+                    const data = JSON.parse(this.response)
+                    if (request.status >= 200 && request.status < 400) {
+                        if(data.hasOwnProperty("album")) {
+                            const imgURL = data.album.image[2]["#text"]
+                            if (!!imgURL) imgTag.src = imgURL
+                        }
+                    }
+                }
+                request.send();
+            }
+
+            window.onload = function () {
+                const albums = document.getElementsByClassName("album")
+
+                for(let album of albums) {
+                    const tagImg = album.querySelector(".album_img")
+                    const pName = album.querySelector(".album_name")
+                    const pArtistName = album.querySelector(".album_artist_name")
+
+                    callAPI(tagImg, pName.innerText, pArtistName.innerText)
+                }
+            }
+        </script>
+    </body>
+</html>
